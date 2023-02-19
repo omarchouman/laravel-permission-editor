@@ -1,0 +1,27 @@
+{
+    "name": "omarchouman/laravel-permission-editor",
+    "description": "Visual UI for Managing Roles/Permissions for Spatie Laravel Permission package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Omar Chouman",
+            "email": "omar.chouman0@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "spatie/laravel-permission": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmarChouman\\LaravelPermissionEditor\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OmarChouman\\LaravelPermissionEditor\\PermissionEditorServiceProvider"
+            ]
+        }
+    }
+}
