@@ -10,13 +10,6 @@ use OmarChouman\LaravelPermissionEditor\Http\Middleware\SpatiePermissionMiddlewa
 
 class PermissionEditorServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
-    public function register(): void
-    {
-        //
-    }
 
     /**
      * Bootstrap services.
@@ -34,14 +27,23 @@ class PermissionEditorServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'permission-editor');
 
         if ($this->app->runningInConsole()) {
+            // Publishing the views.
+            $this->publishes([
+                __DIR__.'/../resources/views' => resource_path('views/vendor/permission-editor'),
+            ], 'views');
+
+            // Publishing assets.
             $this->publishes([
                 __DIR__.'/../resources/assets' => public_path('permission-editor'),
             ], 'assets');
+
+            // Publishing the config files.
             $this->publishes([
                 __DIR__.'/../config/permission-editor.php' => config_path('permission-editor.php'),
             ], 'permission-editor-config');
         }
 
+        // Register middleware
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('spatie-permission', SpatiePermissionMiddleware::class);
     }
