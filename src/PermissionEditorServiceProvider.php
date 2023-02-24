@@ -29,7 +29,7 @@ class PermissionEditorServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publishing the views.
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/permission-editor'),
+                __DIR__.'/../resources/views' => resource_path('views/permission-editor'),
             ], 'views');
 
             // Publishing assets.

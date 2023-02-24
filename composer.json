@@ -1,7 +1,7 @@
 {
     "name": "omarchouman/laravel-permission-editor",
     "description": "Visual UI for Managing Roles/Permissions for Spatie Laravel Permission package",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "authors": [
         {
